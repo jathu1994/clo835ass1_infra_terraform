@@ -33,7 +33,7 @@ resource "aws_instance" "my_amazon" {
   ami                         = data.aws_ami.latest_amazon_linux.id
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.assignment1.key_name
-  subnet_id                   = data.terraform_remote_state.public_subnet.outputs.subnet_id
+  subnet_id                   = data.terraform_remote_state.remote_config.outputs.subnet_id
   security_groups             = [aws_security_group.web_sg.id]
   associate_public_ip_address = true
   iam_instance_profile = "LabInstanceProfile"
