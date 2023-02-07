@@ -1,11 +1,11 @@
-# Step 8 - Add variables
+#Add variables
 variable "instance_type" {
   default     = "t2.micro"
   description = "Type of the instance"
   type        = string
 }
 
-# Step 8 - Add variables
+#Add variables
 variable "default_tags" {
   default = {
     "Owner" = "Jatharthan"
@@ -15,7 +15,7 @@ variable "default_tags" {
   description = "Default tags to be appliad to all AWS resources"
 }
 
-# Step 8 - Add variables
+#Add variables
 variable "prefix" {
   default     = "assignment1"
   type        = string

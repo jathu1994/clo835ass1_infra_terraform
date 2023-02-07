@@ -1,20 +1,20 @@
-# Step 1 - Define the provider
+#Define the provider
 provider "aws" {
   region = "us-east-1"
 }
 
-# Step 12 -Resource for default VPC id
+#Resource for default VPC id
 resource "aws_default_vpc" "default_vpc" {
   tags = {
     Name = "Default VPC"
   }
 }
-# Step 12 - Data source for availability zones in us-east-1
+#Data source for availability zones in us-east-1
 data "aws_availability_zones" "available" {
   state = "available"
 }
 
-# Step 12 - Add provisioning of the public subnetin the default VPC
+#provisioning of the public subnetin the default VPC
 resource "aws_subnet" "public_subnet_assignment1" {
   vpc_id            = aws_default_vpc.default_vpc.id
   cidr_block        = var.cidr_block
